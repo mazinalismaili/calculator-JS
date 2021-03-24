@@ -1,0 +1,131 @@
+<!--www.youtube.com/watch?v=p3FfcJN6IrE-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                font-family: monospace;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-color: cadetblue;
+            }
+            .centeredText{
+                color:palegoldenrod;
+                text-align: center;
+            }
+            .textGrid{
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }.container{
+                width: 350px;
+                background: rgb(144, 197, 218);
+                border-radius: 15px ;
+            }
+            input[type="text"]{
+                height: 60px;
+                width: 300px;
+                margin-top: 40px;
+                border-radius: 1px;
+                border: 1px solid #b1dbf0;
+                color: black;
+                font-size: 22px;
+                font-weight: bold;
+                text-align: right;
+                padding-right: 20px;
+                background: linear-gradient(#d1dce0,#dfe6e9);
+            }
+            form .buttons{
+                width: 300px;
+                margin: 10px 25px 0 25px;
+                padding: 10px 0;
+            }
+            input[type="button"]{
+                height: 55px;
+                width: 65px;
+                margin: 10px;
+                font-size: 22px;
+                line-height: 55px;
+                border-radius: 3px;
+                border: 1px solid #d9d9d9;
+                background: linear-gradient(#d9d9d9, #bfbfbf);
+            }
+            input[type="button"]:hover{
+                transition: .5s;
+                background: linear-gradient(#bfbfbf, #d9d9d9);
+            }
+            input#equal{
+                width: 275px;
+                margin: 10px 0 10px 0;
+                font-size: 30px;
+                color: white;
+                background: linear-gradient(orange,#f1dfbd);
+                border: 1px;
+            }
+            input#equal:hover{
+                transition: .5s;
+                background: linear-gradient(#f1dfbd,orange);
+            }
+            input#clear{
+                height: 55px;
+                width: 65px;
+                margin: 10px;
+                font-size: 22px;
+                line-height: 55px;
+                border-radius: 3px;
+                border: 1px solid #d9d9d9;
+                color: white;
+                background: linear-gradient(crimson,#bfbfbf);
+            }
+            input#clear:hover{
+                transition: .5s;
+                background: linear-gradient(#bfbfbf,crimson);
+            }
+        </style>
+
+        <script>
+            function bindVal(val){
+                document.getElementById('display').value += val; 
+                }
+            function calculate(){
+                if(document.getElementById('display').value !=""){
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+                }
+            }
+            function clearText(){
+                document.getElementById('display').value ='';   
+            }
+        </script>
+
+        <title>My Calculator</title>
+    </head>
+    <!--    <h1 class="centeredText">My Calculator</h1><br> -->
+    <body>
+        <div class="container">
+            <form name="forms">
+                <input type="text" id="display" name="display" disabled>
+                <dev class="button">
+                    <input type="button" id="one" value="1" onclick="bindVal('1')">
+                    <input type="button" id="two" value="2" onclick="bindVal('2')">
+                    <input type="button" id="three" value="3" onclick="bindVal('3')"><br>
+                    <input type="button" id="four" value="4" onclick="bindVal('4')">
+                    <input type="button" id="five" value="5" onclick="bindVal('5')">
+                    <input type="button" id="six" value="6" onclick="bindVal('6')"><br>
+                    <input type="button" id="seven" value="7" onclick="bindVal('7')">
+                    <input type="button" id="eight" value="8" onclick="bindVal('8')">
+                    <input type="button" id="nine" value="9" onclick="bindVal('9')"><br>
+                    <input type="button" id="zero" value="0" onclick="bindVal('0')">
+                    <input type="button" id="add" value="+" onclick="bindVal('+')">
+                    <input type="button" id="sub" value="-" onclick="bindVal('-')"><br>
+                    <input type="button" id="multiply" value="*" onclick="bindVal('*')">
+                    <input type="button" id="divide" value="/" onclick="bindVal('/')">
+                    <input type="button" id="clear" value="c" onclick="clearText()">
+                    <input type="button" id="equal" value="=" onclick="calculate()"><br>
+                </dev>
+            </form> 
+        </div>
+
+    </body>
+</html>
